@@ -1,0 +1,11 @@
+@use '../base/' as b;
+@use '../utilities/' as *;
+
+body {
+    width: 100%;
+    height: 1502px;
+    background-color: $clr--gray;
+    @include breakpoint(laptop) {
+        height: 100vh;
+    }
+}

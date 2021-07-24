@@ -1,0 +1,84 @@
+@use '../utilities/' as *;
+@use '../base/' as b;
+@use '../components/' as c;
+
+.container {
+    width: 375px;
+    height: 1405px;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    @include breakpoint(laptop) {
+        width: calc(300px * 3);
+        height: 75px;
+        padding-top: 100px;
+        flex-direction: row;
+    }
+}
+
+.card {
+    width: 90%;
+    height: 450px;
+    color: $clr--white-trans;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    @include breakpoint(laptop) {
+        width: 300px;
+        height: 475px;
+        padding-bottom: 25px;
+    }
+    
+    & h1 {
+        font-family: b.$ff--big-shoulder-display;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $clr--gray;
+        text-transform: uppercase;
+        @include breakpoint(laptop) {
+            margin-bottom: -1.75em;
+            margin-top: -.5em;
+        }
+    }
+    & p {
+        font-family: b.$ff--lexend-deca;
+        font-size: 1rem;
+        line-height: 1.75;
+        @include breakpoint(laptop) {
+            font-size: 15px;
+            padding-bottom: 4em;
+        }
+    }
+}
+
+.sedans {
+    background-color: $clr--orange;
+    border-radius: 10px 10px 0 0;
+    & .image {
+        content: url('../images/icon-sedans.svg')
+    }
+    @include breakpoint(laptop) {
+        border-radius: 10px 0 0 10px;
+    }
+}
+.suvs {
+    background-color: $clr--dark-cyan;
+    & .image {
+        content: url('../images/icon-suvs.svg')
+    }
+}
+.luxury {
+    background-color: $clr--very-dark-cyan;
+    border-radius: 0 0 10px 10px;
+    & .image {
+        content: url('../images/icon-luxury.svg')
+    }
+    @include breakpoint(laptop) {
+        border-radius: 0 10px 10px 0;
+    }
+}

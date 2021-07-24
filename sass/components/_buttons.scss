@@ -1,0 +1,32 @@
+@use '../utilities/' as *;
+@use '../base/' as b;
+
+@mixin button-trans($color) {
+    color: $color;
+    &:hover {
+        background: darken($color, 10%);
+        color: $clr--gray;
+        padding: 1.25em 3.125em;
+        border: 2px solid $clr--gray;
+        transition: all 300ms ease-in;
+    }
+}
+
+.btn {
+    background-color: $clr--gray;
+    text-decoration: none;
+    padding: 1em 2.5em;
+    border-radius: 3rem;
+    font-family: b.$ff--lexend-deca;
+    transition: all 300ms ease-out;
+}
+
+.btn-sedans {
+    @include button-trans($clr--orange);
+}
+.btn-suvs {
+    @include button-trans($clr--dark-cyan);
+}
+.btn-luxury {
+    @include button-trans($clr--very-dark-cyan);
+}
